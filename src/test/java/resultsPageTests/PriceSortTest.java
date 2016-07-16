@@ -1,7 +1,7 @@
 package resultsPageTests;
 
 import com.google.common.collect.Ordering;
-import factory.WebDriverFactory;
+import browserSetup.WebDriverFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import pages.GoEuroHome;

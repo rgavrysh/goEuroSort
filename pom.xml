@@ -14,6 +14,7 @@
         <testng.version>6.9.9</testng.version>
         <surefire.version>2.19</surefire.version>
         <guava.version>19.0</guava.version>
+        <browser_name>chrome</browser_name>
     </properties>
 
     <dependencies>
@@ -56,6 +57,16 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
 </project>
