@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="GoEuroTest">
+    <listeners>
+        <listener class-name="testListener.ExtentReportListener" />
+    </listeners>
+    <test name="SortTest" allow-return-values="true">
+        <classes>
+            <class name="resultsPageTests.PriceSortTest" />
+        </classes>
+    </test>
+</suite>

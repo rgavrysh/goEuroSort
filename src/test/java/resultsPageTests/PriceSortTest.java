@@ -1,16 +1,18 @@
 package resultsPageTests;
 
-import com.google.common.collect.Ordering;
 import browserSetup.WebDriverFactory;
+import com.google.common.collect.Ordering;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.GoEuroHome;
 import pages.SearchResultPage;
+import testListener.ExtentReportListener;
 
 import java.util.List;
 
 import static org.testng.Assert.assertTrue;
-
+@Listeners(ExtentReportListener.class)
 public class PriceSortTest {
 
     @Test(dataProvider = "searchParameters", dataProviderClass = TestDataProvider.class)

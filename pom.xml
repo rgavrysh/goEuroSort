@@ -12,8 +12,9 @@
         <htmlelements.version>1.17</htmlelements.version>
         <selenium.version>2.53.1</selenium.version>
         <testng.version>6.9.9</testng.version>
-        <surefire.version>2.19</surefire.version>
+        <surefire.version>2.19.1</surefire.version>
         <guava.version>19.0</guava.version>
+        <extent.version>2.41.1</extent.version>
         <browser_name>chrome</browser_name>
     </properties>
 
@@ -48,6 +49,12 @@
             <artifactId>htmlelements-java</artifactId>
             <version>${htmlelements.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.relevantcodes</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>${extent.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -66,6 +73,16 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire.version}</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/testNG.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
@@ -74,7 +91,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>2.19.1</version>
+                <version>${surefire.version}</version>
             </plugin>
         </plugins>
     </reporting>
