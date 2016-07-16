@@ -13,12 +13,12 @@ import static org.testng.Assert.assertTrue;
 
 public class PriceSortTest {
 
-    @Test
-    public void priceSortVerification(){
+    @Test(dataProvider = "searchParameters", dataProviderClass = TestDataProvider.class)
+    public void priceSortVerification(String departureCity, String destinationCity){
         GoEuroHome goEuroHome = new GoEuroHome(WebDriverFactory.getInstance().getDriver());
         goEuroHome.open();
-        SearchResultPage searchResultPage = goEuroHome.enterDeparture("Berlin")
-                .enterDestination("Prague")
+        SearchResultPage searchResultPage = goEuroHome.enterDeparture(departureCity)
+                .enterDestination(destinationCity)
                 .uncheckAirbnb()
                 .search();
         List<Float> resultPrices = searchResultPage.getResultPricesAsList();
