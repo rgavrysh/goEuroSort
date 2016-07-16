@@ -23,5 +23,5 @@ mvn clean test -Dbrowser_name="firefox"
 
 
 #Reporting
-As a reporting tool maven surefire report plugin have been used.
-To view test results report open target/surefire-reports/index.html.
+As a reporting tool [ExtentReport] (https://github.com/anshooarora/extentreports) have been used.
+To view test results report open target/surefire-reports/Extent.html.
